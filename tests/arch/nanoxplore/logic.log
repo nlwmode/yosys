@@ -1,0 +1,1237 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.32+66 (git sha1 2f901a829, clang 15.0.7 -fPIC -Os)
+
+
+-- Executing script file `logic.ys' --
+
+1. Executing Verilog-2005 frontend: ../common/logic.v
+Parsing Verilog input from `../common/logic.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \top
+
+2.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4. Executing EQUIV_OPT pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \top
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+4.2. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+4.3. Executing SYNTH_NANOXPLORE pass.
+
+4.3.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/cells_sim.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\NX_LUT'.
+Generating RTLIL representation for module `\NX_DFF'.
+Generating RTLIL representation for module `\NX_CY'.
+Generating RTLIL representation for module `\NX_XRFB_64x18'.
+Generating RTLIL representation for module `\NX_XRFB_32x36'.
+Successfully finished Verilog frontend.
+
+4.3.2. Executing HIERARCHY pass (managing design hierarchy).
+
+4.3.2.1. Analyzing design hierarchy..
+Top module:  \top
+
+4.3.2.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+4.3.3. Executing PROC pass (convert processes to netlists).
+
+4.3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:139$299 in module NX_XRFB_32x36.
+Marked 1 switch rules as full_case in process $proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:107$127 in module NX_XRFB_64x18.
+Marked 2 switch rules as full_case in process $proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:48$57 in module NX_DFF.
+Removed a total of 0 dead cases.
+
+4.3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 105 assignments to connections.
+
+4.3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$58'.
+  Set init value: \O = 1'x
+
+4.3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \async_reset in `\NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:48$57'.
+
+4.3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+4.3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+Creating decoders for process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:139$299'.
+     1/3: $1$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:141$297_EN[35:0]$306
+     2/3: $1$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:141$297_DATA[35:0]$305
+     3/3: $1$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:141$297_ADDR[4:0]$304
+Creating decoders for process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+Creating decoders for process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:107$127'.
+     1/3: $1$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:109$125_EN[17:0]$134
+     2/3: $1$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:109$125_DATA[17:0]$133
+     3/3: $1$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:109$125_ADDR[5:0]$132
+Creating decoders for process `\NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$58'.
+Creating decoders for process `\NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:48$57'.
+     1/1: $0\O[0:0]
+
+4.3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\NX_XRFB_32x36.\i' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$265_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$266_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$267_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$268_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$269_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$270_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$271_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$272_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$273_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$274_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$275_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$276_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$277_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$278_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$279_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$280_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$281_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$282_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$283_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$284_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$285_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$286_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$287_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$288_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$289_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$290_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$291_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$292_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$293_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$294_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$295_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:134$296_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:141$297_ADDR' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:139$299'.
+  created $dff cell `$procdff$394' with positive edge clock.
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:141$297_DATA' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:139$299'.
+  created $dff cell `$procdff$395' with positive edge clock.
+Creating register for signal `\NX_XRFB_32x36.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:141$297_EN' using process `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:139$299'.
+  created $dff cell `$procdff$396' with positive edge clock.
+Creating register for signal `\NX_XRFB_64x18.\i' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$61_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$62_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$63_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$64_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$65_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$66_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$67_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$68_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$69_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$70_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$71_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$72_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$73_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$74_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$75_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$76_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$77_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$78_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$79_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$80_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$81_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$82_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$83_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$84_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$85_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$86_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$87_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$88_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$89_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$90_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$91_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$92_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$93_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$94_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$95_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$96_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$97_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$98_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$99_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$100_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$101_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$102_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$103_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$104_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$105_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$106_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$107_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$108_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$109_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$110_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$111_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$112_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$113_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$114_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$115_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$116_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$117_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$118_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$119_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$120_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$121_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$122_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$123_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:102$124_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:109$125_ADDR' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:107$127'.
+  created $dff cell `$procdff$397' with positive edge clock.
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:109$125_DATA' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:107$127'.
+  created $dff cell `$procdff$398' with positive edge clock.
+Creating register for signal `\NX_XRFB_64x18.$memwr$\mem$/home/lofty/yosys/share/nanoxplore/cells_sim.v:109$125_EN' using process `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:107$127'.
+  created $dff cell `$procdff$399' with positive edge clock.
+Creating register for signal `\NX_DFF.\O' using process `\NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:48$57'.
+  created $adff cell `$procdff$400' with positive edge clock and positive level reset.
+
+4.3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$340'.
+Found and cleaned up 1 empty switch in `\NX_XRFB_32x36.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:139$299'.
+Removing empty process `NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$200'.
+Found and cleaned up 1 empty switch in `\NX_XRFB_64x18.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:107$127'.
+Removing empty process `NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:0$58'.
+Found and cleaned up 1 empty switch in `\NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:48$57'.
+Removing empty process `NX_DFF.$proc$/home/lofty/yosys/share/nanoxplore/cells_sim.v:48$57'.
+Cleaned up 3 empty switches.
+
+4.3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.4. Executing FLATTEN pass (flatten design).
+
+4.3.5. Executing TRIBUF pass.
+
+4.3.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+4.3.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+4.3.9. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+4.3.10. Executing OPT pass (performing simple optimizations).
+
+4.3.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+4.3.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.3.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.3.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+4.3.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.3.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.3.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.3.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.10.16. Finished OPT passes. (There is nothing left to do.)
+
+4.3.11. Executing FSM pass (extract and optimize FSM).
+
+4.3.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.3.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.3.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.3.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.3.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.3.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.3.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.3.12. Executing OPT pass (performing simple optimizations).
+
+4.3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.3.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.3.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.12.9. Finished OPT passes. (There is nothing left to do.)
+
+4.3.13. Executing WREDUCE pass (reducing word size of cells).
+
+4.3.14. Executing PEEPOPT pass (run peephole optimizers).
+
+4.3.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.16. Executing SHARE pass (SAT-based resource sharing).
+
+4.3.17. Executing TECHMAP pass (map to technology primitives).
+
+4.3.17.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/cmp2lut.v
+Parsing Verilog input from `/home/lofty/yosys/share/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+4.3.17.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+4.3.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module top:
+  created 0 $alu and 0 $macc cells.
+
+4.3.21. Executing TECHMAP pass (map to technology primitives).
+
+4.3.21.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/arith_map.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ecp5_alu'.
+Successfully finished Verilog frontend.
+
+4.3.21.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+4.3.22. Executing OPT pass (performing simple optimizations).
+
+4.3.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.22.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.3.22.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.3.22.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.22.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.22.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.22.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.22.9. Finished OPT passes. (There is nothing left to do.)
+
+4.3.23. Executing MEMORY pass.
+
+4.3.23.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.3.23.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.3.23.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.3.23.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.3.23.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.3.23.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.23.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.3.23.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.3.23.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.23.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.3.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.25. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.3.26. Executing TECHMAP pass (map to technology primitives).
+
+4.3.26.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/cells_map.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Generating RTLIL representation for module `\dff'.
+Generating RTLIL representation for module `\aldff'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$__NX_XRFB_64x18_'.
+Generating RTLIL representation for module `\$__NX_XRFB_32x36_'.
+Successfully finished Verilog frontend.
+
+4.3.26.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~15 debug messages>
+
+4.3.27. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.3.28. Executing OPT pass (performing simple optimizations).
+
+4.3.28.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.28.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.28.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.3.28.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.3.28.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.28.6. Executing OPT_SHARE pass.
+
+4.3.28.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.28.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.28.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.28.10. Finished OPT passes. (There is nothing left to do.)
+
+4.3.29. Executing TECHMAP pass (map to technology primitives).
+
+4.3.29.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/techmap.v
+Parsing Verilog input from `/home/lofty/yosys/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.3.29.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $xnor.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+No more expansions possible.
+<suppressed ~82 debug messages>
+
+4.3.30. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+4.3.31. Executing TECHMAP pass (map to technology primitives).
+
+4.3.31.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/cells_map.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Generating RTLIL representation for module `\dff'.
+Generating RTLIL representation for module `\aldff'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$__NX_XRFB_64x18_'.
+Generating RTLIL representation for module `\$__NX_XRFB_32x36_'.
+Successfully finished Verilog frontend.
+
+4.3.31.2. Executing Verilog-2005 frontend: /home/lofty/yosys/share/techmap.v
+Parsing Verilog input from `/home/lofty/yosys/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.3.31.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~85 debug messages>
+
+4.3.32. Executing OPT pass (performing simple optimizations).
+
+4.3.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.3.32.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.3.32.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.3.32.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.32.6. Executing OPT_SHARE pass.
+
+4.3.32.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.32.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.3.32.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.32.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.3.32.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.3.32.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+4.3.32.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.32.14. Executing OPT_SHARE pass.
+
+4.3.32.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.32.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+4.3.32.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.32.18. Finished OPT passes. (There is nothing left to do.)
+
+4.3.33. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/abc9_model.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__NX_DFF_SYNCONLY'.
+Successfully finished Verilog frontend.
+
+4.3.34. Executing TECHMAP pass (map to technology primitives).
+
+4.3.34.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/abc9_map.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/abc9_map.v' to AST representation.
+Generating RTLIL representation for module `\NX_DFF'.
+Successfully finished Verilog frontend.
+
+4.3.34.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+4.3.35. Executing ABC9 pass.
+
+4.3.35.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+4.3.35.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+4.3.35.3. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module top.
+Found 0 SCCs.
+
+4.3.35.4. Executing ABC9_OPS pass (helper functions for ABC9).
+
+4.3.35.5. Executing PROC pass (convert processes to netlists).
+
+4.3.35.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.3.35.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.3.35.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.3.35.5.4. Executing PROC_INIT pass (extract init attributes).
+
+4.3.35.5.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.3.35.5.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.3.35.5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.3.35.5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.3.35.5.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.3.35.5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.3.35.5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.3.35.5.12. Executing OPT_EXPR pass (perform const folding).
+
+4.3.35.6. Executing TECHMAP pass (map to technology primitives).
+
+4.3.35.6.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/techmap.v
+Parsing Verilog input from `/home/lofty/yosys/share/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.3.35.6.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~80 debug messages>
+
+4.3.35.7. Executing OPT pass (performing simple optimizations).
+
+4.3.35.7.1. Executing OPT_EXPR pass (perform const folding).
+
+4.3.35.7.2. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+4.3.35.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Removed 0 multiplexer ports.
+
+4.3.35.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+Performed a total of 0 changes.
+
+4.3.35.7.5. Executing OPT_MERGE pass (detect identical cells).
+Removed a total of 0 cells.
+
+4.3.35.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.35.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+
+4.3.35.7.8. Executing OPT_EXPR pass (perform const folding).
+
+4.3.35.7.9. Finished OPT passes. (There is nothing left to do.)
+
+4.3.35.8. Executing TECHMAP pass (map to technology primitives).
+
+4.3.35.8.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/abc9_map.v
+Parsing Verilog input from `/home/lofty/yosys/share/abc9_map.v' to AST representation.
+Successfully finished Verilog frontend.
+
+4.3.35.8.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2 debug messages>
+
+4.3.35.9. Executing Verilog-2005 frontend: /home/lofty/yosys/share/abc9_model.v
+Parsing Verilog input from `/home/lofty/yosys/share/abc9_model.v' to AST representation.
+Generating RTLIL representation for module `$__ABC9_DELAY'.
+Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
+Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
+Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
+Successfully finished Verilog frontend.
+
+4.3.35.10. Executing ABC9_OPS pass (helper functions for ABC9).
+
+4.3.35.11. Executing ABC9_OPS pass (helper functions for ABC9).
+
+4.3.35.12. Executing ABC9_OPS pass (helper functions for ABC9).
+<suppressed ~2 debug messages>
+
+4.3.35.13. Executing AIGMAP pass (map logic to AIG).
+Module top: replaced 5 cells with 27 new cells, skipped 5 cells.
+  replaced 3 cell types:
+       3 $_OR_
+       1 $_XOR_
+       1 $_XNOR_
+  not replaced 2 cell types:
+       3 $_NOT_
+       2 $_AND_
+
+4.3.35.13.1. Executing ABC9_OPS pass (helper functions for ABC9).
+
+4.3.35.13.2. Executing ABC9_OPS pass (helper functions for ABC9).
+
+4.3.35.13.3. Executing XAIGER backend.
+<suppressed ~5 debug messages>
+Extracted 11 AND gates and 43 wires from module `top' to a netlist network with 8 inputs and 10 outputs.
+
+4.3.35.13.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+
+4.3.35.13.5. Executing ABC9.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_lut <abc-temp-dir>/input.lut 
+ABC: + read_box <abc-temp-dir>/input.box 
+ABC: + &read <abc-temp-dir>/input.xaig 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =      8/     10  and =       6  lev =    2 (1.20)  mem = 0.00 MB  box = 0  bb = 0
+ABC: + &scorr 
+ABC: Warning: The network is combinational.
+ABC: + &sweep 
+ABC: + &dc2 
+ABC: + &dch -f 
+ABC: + &ps 
+ABC: <abc-temp-dir>/input : i/o =      8/     10  and =       6  lev =    2 (1.20)  mem = 0.00 MB  ch =    0  box = 0  bb = 0
+ABC: + &if -v 
+ABC: K = 4. Memory (bytes): Truth =    0. Cut =   48. Obj =  128. Set =  528. CutMin = no
+ABC: Node =       6.  Ch =     0.  Total mem =    0.00 MB. Peak cut mem =    0.00 MB.
+ABC: P:  Del =  129.00.  Ar =       5.0.  Edge =       14.  Cut =       15.  T =     0.00 sec
+ABC: P:  Del =  129.00.  Ar =       5.0.  Edge =       14.  Cut =       15.  T =     0.00 sec
+ABC: P:  Del =  129.00.  Ar =       5.0.  Edge =       14.  Cut =       15.  T =     0.00 sec
+ABC: F:  Del =  129.00.  Ar =       5.0.  Edge =       14.  Cut =       15.  T =     0.00 sec
+ABC: A:  Del =  129.00.  Ar =       5.0.  Edge =       14.  Cut =       15.  T =     0.00 sec
+ABC: A:  Del =  129.00.  Ar =       5.0.  Edge =       14.  Cut =       15.  T =     0.00 sec
+ABC: Total time =     0.00 sec
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + &mfs 
+ABC: Timing manager is given but there is no GIA of boxes.
+ABC: Error: Abc_FrameUpdateGia(): Tranformation has failed.
+ABC: + &ps -l 
+ABC: <abc-temp-dir>/input : i/o =      8/     10  and =      11  lev =    2 (1.20)  mem = 0.00 MB  box = 0  bb = 0
+ABC: Mapping (K=4)  :  lut =      5  edge =      14  lev =    1 (0.80)  mem = 0.00 MB
+ABC: LUT = 5 : 2=3 60.0 %  3=0 0.0 %  4=2 40.0 %  Ave = 2.80
+ABC: + &write -n <abc-temp-dir>/output.aig 
+ABC: + time 
+ABC: elapse: 0.00 seconds, total: 0.00 seconds
+
+4.3.35.13.6. Executing AIGER frontend.
+<suppressed ~44 debug messages>
+Removed 13 unused cells and 30 unused wires.
+
+4.3.35.13.7. Executing ABC9_OPS pass (helper functions for ABC9).
+ABC RESULTS:              $lut cells:        6
+ABC RESULTS:           input signals:        1
+ABC RESULTS:          output signals:       10
+Removing temp directory.
+
+4.3.35.14. Executing TECHMAP pass (map to technology primitives).
+
+4.3.35.14.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/abc9_unmap.v
+Parsing Verilog input from `/home/lofty/yosys/share/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `\$__DFF_x__$abc9_flop'.
+Generating RTLIL representation for module `\$__ABC9_SCC_BREAKER'.
+Successfully finished Verilog frontend.
+
+4.3.35.14.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~5 debug messages>
+
+4.3.36. Executing TECHMAP pass (map to technology primitives).
+
+4.3.36.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/abc9_unmap.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/abc9_unmap.v' to AST representation.
+Generating RTLIL representation for module `\$__NX_DFF_SYNCONLY'.
+Successfully finished Verilog frontend.
+
+4.3.36.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+4.3.37. Executing TECHMAP pass (map to technology primitives).
+
+4.3.37.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/cells_map.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Generating RTLIL representation for module `\dff'.
+Generating RTLIL representation for module `\aldff'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$__NX_XRFB_64x18_'.
+Generating RTLIL representation for module `\$__NX_XRFB_32x36_'.
+Successfully finished Verilog frontend.
+
+4.3.37.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$20798777255c214e32de3304ce8faa1fdfa2f474\$lut for cells of type $lut.
+Using template $paramod$359fe4e746656bf9c72aecaff84fc7bdea9f55a5\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~155 debug messages>
+
+4.3.38. Executing OPT pass (performing simple optimizations).
+
+4.3.38.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+4.3.38.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+4.3.38.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.3.38.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1 unused cells and 68 unused wires.
+<suppressed ~2 debug messages>
+
+4.3.38.5. Finished fast OPT passes.
+
+4.3.39. Executing AUTONAME pass.
+Renamed 9 objects in module top (2 iterations).
+<suppressed ~9 debug messages>
+
+4.3.40. Executing HIERARCHY pass (managing design hierarchy).
+
+4.3.40.1. Analyzing design hierarchy..
+Top module:  \top
+
+4.3.40.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+4.3.41. Printing statistics.
+
+=== top ===
+
+   Number of wires:                 11
+   Number of wire bits:             18
+   Number of public wires:          11
+   Number of public wire bits:      18
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     NX_LUT                          9
+
+4.3.42. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+4.4. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+4.5. Executing TECHMAP pass (map to technology primitives).
+
+4.5.1. Executing Verilog-2005 frontend: /home/lofty/yosys/share/nanoxplore/cells_sim.v
+Parsing Verilog input from `/home/lofty/yosys/share/nanoxplore/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\NX_LUT'.
+Generating RTLIL representation for module `\NX_DFF'.
+Generating RTLIL representation for module `\NX_CY'.
+Generating RTLIL representation for module `\NX_XRFB_64x18'.
+Generating RTLIL representation for module `\NX_XRFB_32x36'.
+Successfully finished Verilog frontend.
+
+4.5.2. Continuing TECHMAP pass.
+Using template $paramod\NX_LUT\lut_table=16'1111111111111110 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'0000000000001111 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'1111000000001111 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'1110111011100000 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'0000000011111111 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'1111000000000000 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'0000111111111111 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'0000111111110000 for cells of type NX_LUT.
+Using template $paramod\NX_LUT\lut_table=16'1111111111110000 for cells of type NX_LUT.
+No more expansions possible.
+<suppressed ~115 debug messages>
+
+4.6. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: B10_gold ($logic_or$../common/logic.v:15$11_Y_gold), B10_gate ($techmap\B10_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1071_Y_gate) -> B10
+Presumably equivalent wires: B9_gold ($logic_and$../common/logic.v:14$10_Y_gold), B9_gate ($techmap\B9_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1083_Y_gate) -> B9
+Presumably equivalent wires: B8_gold (\in_gold [7]), B8_gate (\in_gate [7]) -> B8
+Presumably equivalent wires: B7_gold ($not$../common/logic.v:12$9_Y_gold), B7_gate ($techmap\B7_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1087_Y_gate) -> B7
+Presumably equivalent wires: B6_gold ($xnor$../common/logic.v:11$8_Y_gold), B6_gate ($techmap\B6_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1079_Y_gate) -> B6
+Presumably equivalent wires: B5_gold ($xor$../common/logic.v:10$7_Y_gold), B5_gate ($techmap\B5_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1099_Y_gate) -> B5
+Presumably equivalent wires: B4_gold ($not$../common/logic.v:9$6_Y_gold), B4_gate ($techmap\B4_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1075_Y_gate) -> B4
+Presumably equivalent wires: B3_gold ($not$../common/logic.v:8$4_Y_gold), B3_gate ($techmap\B3_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1095_Y_gate) -> B3
+Presumably equivalent wires: B2_gold ($or$../common/logic.v:7$2_Y_gold), B2_gate ($techmap\B2_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1103_Y_gate) -> B2
+Presumably equivalent wires: B1_gold ($and$../common/logic.v:6$1_Y_gold), B1_gate ($techmap\B1_NX_LUT_O.$ternary$/home/lofty/yosys/share/nanoxplore/cells_sim.v:16$1091_Y_gate) -> B1
+Presumably equivalent wires: in_gold (\in_gold), in_gate (\in_gate) -> in
+Setting undriven nets to undef: \B1_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B1_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B7_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B7_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B5_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B5_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B5_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B3_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B3_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B3_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B3_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B3_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B1_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B1_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B1_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B10_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B10_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B10_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B10_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B10_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B5_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B4_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B5_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B7_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B7_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B7_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B9_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B9_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B9_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B9_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B9_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B6_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B6_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B6_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B6_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B6_NX_LUT_O.O_gate
+Setting undriven nets to undef: \B4_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B4_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B4_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B4_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B2_NX_LUT_O.I1_gate
+Setting undriven nets to undef: \B2_NX_LUT_O.I2_gate
+Setting undriven nets to undef: \B2_NX_LUT_O.I3_gate
+Setting undriven nets to undef: \B2_NX_LUT_O.I4_gate
+Setting undriven nets to undef: \B2_NX_LUT_O.O_gate
+
+4.7. Executing EQUIV_INDUCT pass.
+Found 10 unproven $equiv cells in module equiv:
+  Proving existence of base case for step 1. (2057 clauses over 792 variables)
+  Proving induction step 1. (4113 clauses over 1583 variables)
+  Proof for induction step holds. Entire workset of 10 cells proven!
+Proved 10 previously unproven $equiv cells.
+
+4.8. Executing EQUIV_STATUS pass.
+Found 10 $equiv cells in equiv:
+  Of those cells 10 are proven and 0 are unproven.
+  Equivalence successfully proven!
+
+End of script. Logfile hash: b129578e0b, CPU: user 0.13s system 0.00s, MEM: 23.44 MB peak
+Yosys 0.32+66 (git sha1 2f901a829, clang 15.0.7 -fPIC -Os)
+Time spent: 33% 21x read_verilog (0 sec), 15% 1x abc9_exe (0 sec), ...
