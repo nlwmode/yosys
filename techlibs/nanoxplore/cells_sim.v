@@ -54,7 +54,7 @@ endmodule
 
 (* abc9_box, lib_whitebox *)
 module NX_CY(input A1, A2, A3, A4, B1, B2, B3, B4, (* abc9_carry *) input CI, output S1, S2, S3, S4, (* abc9_carry *) output CO);
-
+parameter add_carry = 0;
 specify
 	(A1 => CO)     = (206, 266);
 	(A2 => CO)     = (210, 282);

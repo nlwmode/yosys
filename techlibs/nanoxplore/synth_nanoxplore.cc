@@ -40,6 +40,10 @@ struct SynthNanoXplorePass : public ScriptPass {
 		log("    -top <module>\n");
 		log("        use the specified module as top module\n");
 		log("\n");
+		log("    -json <file>\n");
+		log("        write the design to the specified JSON file. writing of an output file\n");
+		log("        is omitted if this parameter is not specified.\n");
+		log("\n");
 		log("    -noflatten\n");
 		log("        do not flatten design before synthesis; useful for per-module area\n");
 		log("        statistics\n");
@@ -73,12 +77,13 @@ struct SynthNanoXplorePass : public ScriptPass {
 		log("\n");
 	}
 
-	string top_opt, family_opt, bram_type, vout_file;
+	string top_opt, family_opt, bram_type, vout_file, json_file;
 	bool flatten, quartus, nolutram, nobram, dff, nodsp, noiopad, noclkbuf;
 
 	void clear_flags() override
 	{
 		top_opt = "-auto-top";
+		json_file = "";
 		flatten = true;
 		nolutram = false;
 		nobram = false;
@@ -97,6 +102,10 @@ struct SynthNanoXplorePass : public ScriptPass {
 		for (argidx = 1; argidx < args.size(); argidx++) {
 			if (args[argidx] == "-top" && argidx + 1 < args.size()) {
 				top_opt = "-top " + args[++argidx];
+				continue;
+			}
+			if (args[argidx] == "-json" && argidx+1 < args.size()) {
+				json_file = args[++argidx];
 				continue;
 			}
 			if (args[argidx] == "-run" && argidx + 1 < args.size()) {
@@ -153,7 +162,7 @@ struct SynthNanoXplorePass : public ScriptPass {
 	void script() override
 	{
 		if (check_label("begin")) {
-			run("read_verilog -specify -lib +/nanoxplore/cells_sim.v");
+			run("read_verilog -specify -lib +/nanoxplore/cells_sim.v +/nanoxplore/cells_bb.v");
 			// Misc and common cells
 			run(stringf("hierarchy -check %s", help_mode ? "-top <top>" : top_opt.c_str()));
 		}
@@ -229,6 +238,11 @@ struct SynthNanoXplorePass : public ScriptPass {
 			run("blackbox =A:whitebox");
 		}
 
+		if (check_label("json"))
+		{
+			if (!json_file.empty() || help_mode)
+				run(stringf("write_json %s", help_mode ? "<file-name>" : json_file.c_str()));
+		}
 	}
 } SynthNanoXplorePass;
 
