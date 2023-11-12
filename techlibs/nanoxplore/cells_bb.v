@@ -1130,24 +1130,24 @@ module NX_CTX_U(ENC_E_I1, ENC_E_I2, ENC_E_I3, ENC_E_I4, ENC_E_I5, ENC_E_I6, ENC_
     parameter pma_loopback = 1'b0;
 endmodule
 
-(* blackbox *)
-module NX_CY(A1, A2, A3, A4, B1, B2, B3, B4, CI, CO, S1, S2, S3, S4);
-    input A1;
-    input A2;
-    input A3;
-    input A4;
-    input B1;
-    input B2;
-    input B3;
-    input B4;
-    input CI;
-    output CO;
-    output S1;
-    output S2;
-    output S3;
-    output S4;
-    parameter add_carry = 0;
-endmodule
+//(* blackbox *)
+//module NX_CY(A1, A2, A3, A4, B1, B2, B3, B4, CI, CO, S1, S2, S3, S4);
+//    input A1;
+//    input A2;
+//    input A3;
+//    input A4;
+//    input B1;
+//    input B2;
+//    input B3;
+//    input B4;
+//    input CI;
+//    output CO;
+//    output S1;
+//    output S2;
+//    output S3;
+//    output S4;
+//    parameter add_carry = 0;
+//endmodule
 
 (* blackbox *)
 module NX_DES(FCK, SCK, R, IO, DCK, DRL, DIG, FZ, FLD, FLG, O, DS, DRA, DRI, DRO, DID);
@@ -1182,20 +1182,20 @@ module NX_DES(FCK, SCK, R, IO, DCK, DRL, DIG, FZ, FLD, FLG, O, DS, DRA, DRI, DRO
     parameter weakTermination = "";
 endmodule
 
-(* blackbox *)
-module NX_DFF(I, CK, L, R, O);
-    input CK;
-    input I;
-    input L;
-    output O;
-    input R;
-    parameter dff_ctxt = 1'b0;
-    parameter dff_edge = 1'b0;
-    parameter dff_init = 1'b0;
-    parameter dff_load = 1'b0;
-    parameter dff_sync = 1'b0;
-    parameter dff_type = 1'b0;
-endmodule
+//(* blackbox *)
+//module NX_DFF(I, CK, L, R, O);
+//    input CK;
+//    input I;
+//    input L;
+//    output O;
+//    input R;
+//    parameter dff_ctxt = 1'b0;
+//    parameter dff_edge = 1'b0;
+//    parameter dff_init = 1'b0;
+//    parameter dff_load = 1'b0;
+//    parameter dff_sync = 1'b0;
+//    parameter dff_type = 1'b0;
+//endmodule
 
 (* blackbox *)
 module NX_DFR(I, CK, L, R, O);
@@ -7673,15 +7673,15 @@ module NX_IOM_U(ALCK1, ALCK2, ALCK3, LDSCK1, LDSCK2, LDSCK3, SWRX1CK, SWRX2CK, F
     parameter use_dc = 1'b0;
 endmodule
 
-(* blackbox *)
-module NX_LUT(I1, I2, I3, I4, O);
-    input I1;
-    input I2;
-    input I3;
-    input I4;
-    output O;
-    parameter lut_table = 16'b0000000000000000;
-endmodule
+//(* blackbox *)
+//module NX_LUT(I1, I2, I3, I4, O);
+//    input I1;
+//    input I2;
+//    input I3;
+//    input I4;
+//    output O;
+//    parameter lut_table = 16'b0000000000000000;
+//endmodule
 
 (* blackbox *)
 module NX_PLL(REF, FBK, VCO, D1, D2, D3, OSC, RDY);
@@ -32930,31 +32930,31 @@ module NX_XRFB_2R_1W(WCK, WE, WEA, I, AO, BO, WA, ARA, BRA);
     parameter wck_edge = 1'b0;
 endmodule
 
-(* blackbox *)
-module NX_XRFB_32x36(WCK, WE, WEA, I, O, RA, WA);
-    input [35:0] I;
-    output [35:0] O;
-    input [4:0] RA;
-    input [4:0] WA;
-    input WCK;
-    input WE;
-    input WEA;
-    parameter mem_ctxt = "";
-    parameter wck_edge = 1'b0;
-endmodule
-
-(* blackbox *)
-module NX_XRFB_64x18(WCK, WE, WEA, I, O, RA, WA);
-    input [17:0] I;
-    output [17:0] O;
-    input [5:0] RA;
-    input [5:0] WA;
-    input WCK;
-    input WE;
-    input WEA;
-    parameter mem_ctxt = "";
-    parameter wck_edge = 1'b0;
-endmodule
+//(* blackbox *)
+//module NX_XRFB_32x36(WCK, WE, WEA, I, O, RA, WA);
+//    input [35:0] I;
+//    output [35:0] O;
+//    input [4:0] RA;
+//    input [4:0] WA;
+//    input WCK;
+//    input WE;
+//    input WEA;
+//    parameter mem_ctxt = "";
+//    parameter wck_edge = 1'b0;
+//endmodule
+//
+//(* blackbox *)
+//module NX_XRFB_64x18(WCK, WE, WEA, I, O, RA, WA);
+//    input [17:0] I;
+//    output [17:0] O;
+//    input [5:0] RA;
+//    input [5:0] WA;
+//    input WCK;
+//    input WE;
+//    input WEA;
+//    parameter mem_ctxt = "";
+//    parameter wck_edge = 1'b0;
+//endmodule
 
 (* blackbox *)
 module SMACC24x18_1DSP(clk, rst, A, B, Z);
