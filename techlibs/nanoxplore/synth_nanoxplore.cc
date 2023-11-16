@@ -72,13 +72,16 @@ struct SynthNanoXplorePass : public ScriptPass {
 		log("    -noclkbuf\n");
 		log("        do not insert global clock buffers\n");
 		log("\n");
+		log("    -nocy\n");
+		log("        do not map adders to CY cells\n");
+		log("\n");
 		log("The following commands are executed by this synthesis command:\n");
 		help_script();
 		log("\n");
 	}
 
 	string top_opt, family_opt, bram_type, vout_file, json_file;
-	bool flatten, quartus, nolutram, nobram, dff, nodsp, noiopad, noclkbuf;
+	bool flatten, quartus, nolutram, nobram, dff, nodsp, noiopad, noclkbuf, nocy;
 
 	void clear_flags() override
 	{
@@ -91,6 +94,7 @@ struct SynthNanoXplorePass : public ScriptPass {
 		nodsp = false;
 		noiopad = false;
 		noclkbuf = false;
+		nocy = false;
 	}
 
 	void execute(std::vector<std::string> args, RTLIL::Design *design) override
@@ -144,6 +148,10 @@ struct SynthNanoXplorePass : public ScriptPass {
 				noclkbuf = true;
 				continue;
 			}
+			if (args[argidx] == "-nocy") {
+				nocy = true;
+				continue;
+			}
 			break;
 		}
 		extra_args(args, argidx, design);
@@ -187,9 +195,17 @@ struct SynthNanoXplorePass : public ScriptPass {
 			run("opt_expr");
 			run("opt_clean");
 			run("alumacc");
-			//if (!noiopad)
-			//	run("iopadmap -bits -outpad MISTRAL_OB I:PAD -inpad MISTRAL_IB O:PAD -toutpad MISTRAL_IO OE:O:PAD -tinoutpad MISTRAL_IO OE:O:I:PAD A:top", "(unless -noiopad)");
-			run("techmap -map +/nanoxplore/arith_map.v");
+			if (!noiopad) {
+				run("iopadmap -bits -outpad $__BEYOND_OBUF I:PAD -inpad $__BEYOND_IBUF O:PAD A:top", "(only if '-iopad')");
+				run("techmap -map +/nanoxplore/io_map.v");
+				run("attrmvcp -attr src -attr BEL t:NX_IOB_O n:*");
+				run("attrmvcp -attr src -attr BEL -driven t:NX_IOB_I n:*");
+			}
+			if (nocy)
+				run("techmap");
+			else
+				run("techmap -map +/nanoxplore/arith_map.v");
+
 			run("opt");
 			run("memory -nomap");
 			run("opt_clean");
