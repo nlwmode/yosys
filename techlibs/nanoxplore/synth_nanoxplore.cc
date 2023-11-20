@@ -198,8 +198,8 @@ struct SynthNanoXplorePass : public ScriptPass {
 			if (!noiopad) {
 				run("iopadmap -bits -outpad $__BEYOND_OBUF I:PAD -inpad $__BEYOND_IBUF O:PAD A:top", "(only if '-iopad')");
 				run("techmap -map +/nanoxplore/io_map.v");
-				run("attrmvcp -attr src -attr BEL t:NX_IOB_O n:*");
-				run("attrmvcp -attr src -attr BEL -driven t:NX_IOB_I n:*");
+				run("attrmvcp -attr src -attr LOC t:NX_IOB_O n:*");
+				run("attrmvcp -attr src -attr LOC -driven t:NX_IOB_I n:*");
 			}
 			if (nocy)
 				run("techmap");
