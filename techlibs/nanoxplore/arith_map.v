@@ -50,8 +50,8 @@ module _80_ecp5_alu (A, B, CI, BI, X, Y, CO);
 	generate for (i = 0; i < Y_WIDTH4; i = i + 4) begin:slice
         NX_CY cy_i (
             .CI(C[i]),
-            .A1(AA[i]), .A2(AA[i+1]), .A3(AA[i+2]), .A4(AA[i+3]),
-            .B1(BB[i]), .B2(BB[i+1]), .B3(BB[i+2]), .B4(BB[i+3]),
+            .B1(AA[i]), .B2(AA[i+1]), .B3(AA[i+2]), .B4(AA[i+3]),
+            .A1(BB[i]), .A2(BB[i+1]), .A3(BB[i+2]), .A4(BB[i+3]),
             .S1(Y1[i]), .S2(Y1[i+1]), .S3(Y1[i+2]), .S4(Y1[i+3]),
             .CO(FCO[i])
         );
