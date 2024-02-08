@@ -237,10 +237,10 @@ struct SynthNanoXplorePass : public ScriptPass {
 		}
 
 		if (check_label("map_luts")) {
-			run("read_verilog -lib -icells -specify +/nanoxplore/abc9_model.v");
-			run("techmap -map +/nanoxplore/abc9_map.v");
+			//run("read_verilog -lib -icells -specify +/nanoxplore/abc9_model.v");
+			//run("techmap -map +/nanoxplore/abc9_map.v");
 			run(stringf("abc9 %s -maxlut 4", help_mode ? "[-dff]" : dff ? "-dff" : ""));
-			run("techmap -map +/nanoxplore/abc9_unmap.v");
+			//run("techmap -map +/nanoxplore/abc9_unmap.v");
 			run("techmap -map +/nanoxplore/cells_map.v t:$lut");
 			run("opt -fast");
 			run("autoname");
