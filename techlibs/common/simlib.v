@@ -33,11 +33,10 @@
 
 // --------------------------------------------------------
 
-//  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
-//-
-//-     $not (A, Y)
-//-
-//- A bit-wise inverter. This corresponds to the Verilog unary prefix '~' operator.
+//* ver 2
+//* title Bit-wise inverter
+//* group unary
+//- This corresponds to the Verilog unary prefix '~' operator.
 //-
 module \$not (A, Y);
 
@@ -64,6 +63,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $pos (A, Y)
+//* group unary
 //-
 //- A buffer. This corresponds to the Verilog unary prefix '+' operator.
 //-
@@ -91,6 +91,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $neg (A, Y)
+//* group unary
 //-
 //- An arithmetic inverter. This corresponds to the Verilog unary prefix '-' operator.
 //-
@@ -238,6 +239,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $reduce_and (A, Y)
+//* group unary
 //-
 //- An AND reduction. This corresponds to the Verilog unary prefix '&' operator.
 //-
@@ -265,6 +267,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $reduce_or (A, Y)
+//* group unary
 //-
 //- An OR reduction. This corresponds to the Verilog unary prefix '|' operator.
 //-
@@ -292,6 +295,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $reduce_xor (A, Y)
+//* group unary
 //-
 //- A XOR reduction. This corresponds to the Verilog unary prefix '^' operator.
 //-
@@ -319,6 +323,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $reduce_xnor (A, Y)
+//* group unary
 //-
 //- A XNOR reduction. This corresponds to the Verilog unary prefix '~^' operator.
 //-
@@ -346,6 +351,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $reduce_bool (A, Y)
+//* group unary
 //-
 //- An OR reduction. This cell type is used instead of $reduce_or when a signal is
 //- implicitly converted to a boolean signal, e.g. for operands of '&&' and '||'.
@@ -1219,6 +1225,7 @@ endmodule
 `endif
 // --------------------------------------------------------
 
+//* group unary
 module \$logic_not (A, Y);
 
 parameter A_SIGNED = 0;
