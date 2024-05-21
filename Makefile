@@ -986,6 +986,9 @@ docs/source/cell/word_add.rst: $(TARGETS) $(EXTRA_TARGETS)
 	$(Q) rsync -rc temp/docs/source/cell docs/source
 	$(Q) rm -rf temp
 
+docs/source/generated/cells.json: docs/source/generated $(TARGETS) $(EXTRA_TARGETS)
+	$(Q) ./$(PROGRAM_PREFIX)yosys -p 'help -dump-cells-json $@'
+
 PHONY: docs/gen_examples docs/gen_images docs/guidelines docs/usage docs/reqs
 docs/gen_examples:
 	$(Q) $(MAKE) -C docs examples
@@ -1020,7 +1023,7 @@ docs/reqs:
 	$(Q) $(MAKE) -C docs reqs
 
 DOC_TARGET ?= html
-docs: docs/source/cmd/abc.rst docs/source/cell/word_add.rst docs/gen_examples docs/gen_images docs/guidelines docs/usage docs/reqs
+docs: docs/source/cmd/abc.rst docs/source/generated/cells.json docs/gen_examples docs/gen_images docs/guidelines docs/usage docs/reqs
 	$(Q) $(MAKE) -C docs $(DOC_TARGET)
 
 clean:
