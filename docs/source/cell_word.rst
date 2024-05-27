@@ -19,4 +19,23 @@ Simulation models for the RTL cells can be found in the file
 
    /cell/word_unary
    /cell/word_binary
-   /cell/word_other
+   /cell/word_mux
+   /cell/word_reg
+   /cell/word_mem
+   /cell/word_fsm
+   /cell/word_arith
+   /cell/word_spec
+   /cell/word_formal
+   /cell/word_debug
+
+.. todo:: Add information about `$slice` and `$concat` cells.
+
+.. todo:: Add information about `$lut` and `$sop` cells.
+
+.. todo:: Add information about `$alu`, `$fa`, and `$lcu` cells.
+
+.. autocellgroup:: word_other
+   :caption: Other word-level cells
+   :members:
+   :source:
+   :linenos:
