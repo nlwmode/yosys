@@ -45,6 +45,7 @@ available, go to :ref:`commandindex`.
    :includehidden:
 
    appendix/primer
+   appendix/rtlil_text
    appendix/auxlibs
    appendix/auxprogs
 
