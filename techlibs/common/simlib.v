@@ -119,6 +119,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $and (A, B, Y)
+//* group binary
 //-
 //- A bit-wise AND. This corresponds to the Verilog '&' operator.
 //-
@@ -149,6 +150,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $or (A, B, Y)
+//* group binary
 //-
 //- A bit-wise OR. This corresponds to the Verilog '|' operator.
 //-
@@ -179,6 +181,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $xor (A, B, Y)
+//* group binary
 //-
 //- A bit-wise XOR. This corresponds to the Verilog '^' operator.
 //-
@@ -209,6 +212,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $xnor (A, B, Y)
+//* group binary
 //-
 //- A bit-wise XNOR. This corresponds to the Verilog '~^' operator.
 //-
@@ -377,6 +381,8 @@ endmodule
 
 // --------------------------------------------------------
 
+//* group binary
+
 module \$shl (A, B, Y);
 
 parameter A_SIGNED = 0;
@@ -400,6 +406,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$shr (A, B, Y);
 
@@ -424,6 +431,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$sshl (A, B, Y);
 
@@ -448,6 +456,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$sshr (A, B, Y);
 
@@ -472,6 +481,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$shift (A, B, Y);
 
@@ -504,6 +514,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$shiftx (A, B, Y);
 
@@ -641,6 +652,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$lt (A, B, Y);
 
@@ -665,6 +677,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$le (A, B, Y);
 
@@ -689,6 +702,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$eq (A, B, Y);
 
@@ -713,6 +727,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$ne (A, B, Y);
 
@@ -737,6 +752,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$eqx (A, B, Y);
 
@@ -761,6 +777,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$nex (A, B, Y);
 
@@ -785,6 +802,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$ge (A, B, Y);
 
@@ -809,6 +827,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$gt (A, B, Y);
 
@@ -833,6 +852,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$add (A, B, Y);
 
@@ -857,6 +877,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$sub (A, B, Y);
 
@@ -881,6 +902,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$mul (A, B, Y);
 
@@ -1059,6 +1081,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $div (A, B, Y)
+//* group binary
 //-
 //- Division with truncated result (rounded towards 0).
 //-
@@ -1089,6 +1112,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $mod (A, B, Y)
+//* group binary
 //-
 //- Modulo/remainder of division with truncated result (rounded towards 0).
 //-
@@ -1121,6 +1145,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $divfloor (A, B, Y)
+//* group binary
 //-
 //- Division with floored result (rounded towards negative infinity).
 //-
@@ -1158,6 +1183,7 @@ endmodule
 //  |---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|---v---|
 //-
 //-     $modfloor (A, B, Y)
+//* group binary
 //-
 //- Modulo/remainder of division with floored result (rounded towards negative infinity).
 //-
@@ -1196,6 +1222,7 @@ endmodule
 // --------------------------------------------------------
 `ifndef SIMLIB_NOPOW
 
+//* group binary
 module \$pow (A, B, Y);
 
 parameter A_SIGNED = 0;
@@ -1246,6 +1273,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$logic_and (A, B, Y);
 
@@ -1270,6 +1298,7 @@ endgenerate
 endmodule
 
 // --------------------------------------------------------
+//* group binary
 
 module \$logic_or (A, B, Y);
 
